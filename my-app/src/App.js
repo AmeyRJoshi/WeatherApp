@@ -82,7 +82,7 @@ visibility:null,
              
             </div>
             <WeatherInfo humidity={this.state.humidity}
-          visibility={this.state.visibility}
+            visibility={this.state.visibility}
             windSpeed={this.state.windSpeed}
             feelsLike={this.state.feelsLike}
             maxTemp={this.state.maxTemp}
