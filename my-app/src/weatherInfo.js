@@ -7,16 +7,35 @@ const defaults = {
      animate: true
    };
 function WeatherInfo(props){
+    var weatherIcon;
+     switch(props.weatherName){
+              case "FOG":
+              weatherIcon = 'FOG';
+              break;
+              case "SNOW":
+              weatherIcon = 'SNOW';
+              break;
+              case "Haze":
+              weatherIcon = 'CLEAR_DAY';
+              break;
+              case "Rain":
+              weatherIcon = 'RAIN';
+              break;
+              case "RAIN":
+              weatherIcon = 'CLOUDY'
+              default:
+              weatherIcon ='CLEAR_DAY' 
+
+    }
 return(
      <React.Fragment>
-          <div className="col-6 side-bg text-center py-4">
+          <div className="col-4 side-bg text-center py-4">
           <ReactAnimatedWeather
-    icon={defaults.icon}
-    color={defaults.color}
-    size={defaults.size}
-    animate={defaults.animate}
-  />
-    <h2 className="text-white py-2">{props.weatherName}</h2>
+             icon={weatherIcon}
+             color={defaults.color}
+             size={defaults.size}
+             animate={defaults.animate} />
+     <h2 className="text-white py-2">{props.weatherName}</h2>
     <div className="d-flex flex-wrap">
          <div className="d-flex col-12 py-4 ">
               <div className="text-white"><strong>Humidity</strong></div>

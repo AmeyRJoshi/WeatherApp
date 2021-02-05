@@ -6,15 +6,15 @@ class App extends React.Component{
 state = {
   latitude: null,
   longitude: null,
-  temp:null,
+  temp: null,
   locationName: null,
-  country:null,
-  humidity:null,
-visibility:null,
-  windSpeed:null,
-  feelsLike:null,
-  maxTemp:null,
-  weatherName:null
+  country: null,
+  humidity: null,
+  visibility: null,
+  windSpeed: null,
+  feelsLike: null,
+  maxTemp: null,
+  weatherName: null
 
 
 }
@@ -46,11 +46,11 @@ visibility:null,
         locationName:data.name,
         country:data.sys.country,
         humidity:data.main.humidity,
-      visibility:data.sys.visibility,
+        visibility:data.visibility,
         windSpeed:data.wind.speed,
         feelsLike:data.main.feels_like,
         maxTemp:data.main.temp_max,
-        weatherName:data.weather[0].main
+        weatherName:data.weather[0].main,
 
       }
     )
@@ -58,6 +58,7 @@ visibility:null,
   }
   render(){
     return (
+      
         <React.Fragment>
           <div className="col-8 d-flex justify-content-center py-5">
             <div className="col-6 app-bg d-flex flex-wrap py-3">
@@ -81,10 +82,8 @@ visibility:null,
              </div>
              
             </div>
-            <WeatherInfo humidity={this.state.humidity}
-            visibility={this.state.visibility}
-            windSpeed={this.state.windSpeed}
-            feelsLike={this.state.feelsLike}
+            
+            <WeatherInfo humidity={this.state.humidity} visibility={this.state.visibility} windSpeed={this.state.windSpeed}feelsLike={this.state.feelsLike}
             maxTemp={this.state.maxTemp}
             weatherName={this.state.weatherName}/>
             </div>
